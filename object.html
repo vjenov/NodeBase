@@ -1,0 +1,38 @@
+<html>
+
+<head>
+	<title>title</title>
+</head>
+
+<body>
+	<script>
+	window.onload = function(){
+		// 프로퍼티(인스턴스) 생성 let member = function(){}
+		function Person(name, gender){// 객체생성
+			let _name = name
+			let _gender = gender
+			let _age
+			this.getName = function(){
+				return _name
+			}
+			this.getGender = function(){
+				return _gender
+			}
+			this.setAge = function(age) {
+				_age = age
+			}
+			this.getAge = function(){
+				return _age
+			}
+			this.toString = function(){
+				return `${person.getName()}(${person.getGender()}) , ${person.getAge()}세`
+			}
+		}
+			let person = new Person('Kim', 'male')
+			person.setAge('20')
+			alert(person.toString())
+		}
+	</script>
+</body>
+
+</html>
