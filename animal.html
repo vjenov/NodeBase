@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<script src="Animal.js"></script>
+	<script src="AnimalService.js"></script>
+</head>
+<body>
+<script>
+window.onload = function() {
+	const init = new Initializer()
+	init.animal()
+	const a = new Animal()
+	a.setName('치와와')
+	alert(`동물이름 : ${a.getName()}`)
+	init.human()
+	let b = new Human()//--> 이 값들은 animal에 들어있다
+	b.setName('인간')
+	alert(` 인간이름 :  ${b.test()}`)
+	init.superhero()
+	let c = new SuperHero()//--> 이 값들은 animal에 들어있다
+	c.setName('슈퍼히어로')
+	alert(`슈퍼히어로는 ${c.test()}`)
+}	
+</script>
+</body>
+</html>
