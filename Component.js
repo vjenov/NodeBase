@@ -1,30 +1,26 @@
-function InputText(){
-	this.make = function(){
+const compo = {
+	div(id, text) {
+		const div = document.createElement('div')
+		div.setAttribute('style', 'border: 1px solid black')
+		div.setAttribute('id', id)
+		// div.textContent = text
+		return div
+	},
+	inputText(id, type){
+		const arr = [...arguments]
 		const input = document.createElement('input')
-		input.setAttribute('type','text')
-		input.setAttribute('id','val')
+		input.setAttribute('type',type)
+		input.setAttribute('id', id)
 		return input
-	}
-}
-function InputButton(){
-	this.make = function(){
+	},
+	inputButton(id, type, val){
 		const input = document.createElement('input')
-		input.setAttribute('type','button')
-		input.setAttribute('value','버튼')
-		input.setAttribute('id','btn')
+		input.setAttribute('type',type)
+		input.setAttribute('value',val)
+		input.setAttribute('id',id)
 		return input
-	}
-}	
-function Br(){
-	this.make = function(){
-		const br = document.createElement('br')
-		return br
-	}
-}		
-function Factory(type){
-	switch(type){
-		case 'inputText' : return new InputText()
-		case 'inputButton' : return new InputButton()
-		case 'br' : return new Br()
+	},
+	br(){
+		return document.createElement('br')
 	}
 }
